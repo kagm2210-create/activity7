@@ -14,8 +14,18 @@ class CreateCoursesTable extends Migration
     public function up()
     {
         Schema::create('courses', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+    $table->id();
+    $table->string('title');
+    $table->string('cover');
+    $table->text('content');
+    
+    $table->unsignedBigInteger('robotics_kit_id');
+    $table->unsignedBigInteger('group_id');
+
+    $table->timestamps();
+
+    $table->foreign('robotics_kit_id')->references('id')->on('robotics_kits');
+    $table->foreign('group_id')->references('id')->on('groups'); 
         });
     }
 

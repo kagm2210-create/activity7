@@ -14,8 +14,9 @@ class CreateRoboticsKitsTable extends Migration
     public function up()
     {
         Schema::create('robotics_kits', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+    $table->id();
+    $table->string('name');
+    $table->timestamps();
         });
     }
 
