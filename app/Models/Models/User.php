@@ -15,9 +15,4 @@ class User extends Authenticatable
         'password',
         'role'
     ];
-
-    public function group()
-    {
-        return $this->belongsTo(Group::class);
-    }
 }
